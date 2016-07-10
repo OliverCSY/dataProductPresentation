@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ozone Concentration Prediction</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Ozone Concentration Prediction">
+  <meta name="author" content="Shanyun Chu">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Ozone Concentration Prediction</h1>
+    <h2>Developing Data Products Course Project</h2>
+    <p>Shanyun Chu<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>This web application is designed to predict the daily Ozone concentration level in New York, given temperature, solar radiation level and wind speed.</p></li>
+<li><p>The data ozone comes from the package ElemStatLearn, based on which our prediction model is built.</p></li>
+<li><p>The algorithm we use is stochastic gradient boosting, which is efficient in handling dataset of this size as well as predictive accuracy.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Ozone Dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>The dataset ozone derives from ElemStatLearn package, with 111 observations and 4 variables.</p></li>
+<li><p>The temperature is recorded in degree F. The range of input is suggested to be within 50 and 100.</p></li>
+<li><p>the solar radiation is recorded in langleys. The range of input is suggested to be within 0 and 350.</p></li>
+<li><p>the wind speed is recorded in mph. The range of input is suggested to be within 0 and 25.</p></li>
+<li><p>the Ozone concentration is recorded in &#39;ppb&#39; (parts per billion)</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The Prediction Algorithm</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>The algorithm in use is stochastic gradient boosting. The package \(caret\) and \(gbm\) are required in the model establishment.</p></li>
+<li><p>Multivariate regression is attempted in the first place. There are two major drawbacks. </p>
+
+<ul>
+<li>the coefficient of determination R<sup>2</sup> is around 0.5, which is not large enough. </li>
+<li>The predicted value can take negative value, which is meaningless in the practical sense.</li>
+</ul></li>
+<li><p>Stochastic gradient boosting is well-known as its high accuracy in prediction. Although it may be time-consuming and lack interpretability, it is appropriate in relatively small size of data as in our case.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Closing remarks</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The shiny application can be found <a href="https://olivercsy.shinyapps.io/OzonePrediction/">here</a>, and the original code can be found <a href="https://github.com/OliverCSY/dataProduct">here</a>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Ozone Dataset'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The Prediction Algorithm'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Closing remarks'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

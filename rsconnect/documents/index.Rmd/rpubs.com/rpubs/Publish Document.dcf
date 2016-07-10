@@ -1,0 +1,7 @@
+name: Publish Document
+account: rpubs
+server: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/195042/a8973224a77e4ab2a4f83b67ee51c12d
+bundleId: https://api.rpubs.com/api/v1/document/195042/a8973224a77e4ab2a4f83b67ee51c12d
+url: http://rpubs.com/OliverCSY/195042
+when: 1468183973.97183
